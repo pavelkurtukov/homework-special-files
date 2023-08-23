@@ -76,11 +76,11 @@ public class Main {
                 if (Node.ELEMENT_NODE == node.getNodeType()) {
                     Element employee = (Element) node;
 
-                    long employeeId = Long.parseLong(((Element) node).getElementsByTagName("id").item(0).getTextContent());
-                    String employeeFirstName = ((Element) node).getElementsByTagName("firstName").item(0).getTextContent();
-                    String employeeLastName = ((Element) node).getElementsByTagName("lastName").item(0).getTextContent();
-                    String employeeCountry = ((Element) node).getElementsByTagName("country").item(0).getTextContent();
-                    int employeeAge = Integer.parseInt(((Element) node).getElementsByTagName("age").item(0).getTextContent());
+                    long employeeId = Long.parseLong(employee.getElementsByTagName("id").item(0).getTextContent());
+                    String employeeFirstName = employee.getElementsByTagName("firstName").item(0).getTextContent();
+                    String employeeLastName = employee.getElementsByTagName("lastName").item(0).getTextContent();
+                    String employeeCountry = employee.getElementsByTagName("country").item(0).getTextContent();
+                    int employeeAge = Integer.parseInt(employee.getElementsByTagName("age").item(0).getTextContent());
 
                     employeeList.add(new Employee(employeeId, employeeFirstName, employeeLastName, employeeCountry, employeeAge));
                 }
